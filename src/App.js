@@ -20,8 +20,8 @@ const left_navi = [
   {
     id: 2,
     name: "Release",
-    date: "December 24, 2018",
-    data: ["내역1", "내역2"]
+    date: "March 5, 2021",
+    data: ["TOS 21.rc", "내역2"]
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const right_navi = [
   {
     id: 4,
     name: "Manual",
-    data: ["Installer Guide", "User Guide", "Printer Guide"]
+    data: ["Installer 생성 가이드", "사용자 안내서 (User Guide)", "프린트 설정 안내서", "Multibooting Guide"]
   },
 ];
 
@@ -74,6 +74,14 @@ function Card({ name, date, data }){
   );
 }
 
+function Footer(){
+  return (
+    <div className="footer">
+      <h5>2021 OSQA Team, TmaxOS. All rights reserved.</h5>
+    </div>
+  );
+}
+
 function App() {
   const navigator = [
     ...left_navi,
@@ -88,16 +96,19 @@ function App() {
           <Topnav name={nav.name} />
         ))}
       </div>
-      <div className="leftcolumn">
-        {left_navi.map(nav => (
-          <Card id={nav.id} name={nav.name} date={nav.date} data={nav.data} />
-        ))}
+      <div className="row">
+        <div className="leftcolumn">
+          {left_navi.map(nav => (
+            <Card id={nav.id} name={nav.name} date={nav.date} data={nav.data} />
+          ))}
+        </div>
+        <div className="rightcolumn">
+          {right_navi.map(nav => (
+            <Card id={nav.id} name={nav.name} date={nav.date} data={nav.data} />
+          ))}
+        </div>
       </div>
-      <div className="rightcolumn">
-        {right_navi.map(nav => (
-          <Card id={nav.id} name={nav.name} date={nav.date} data={nav.data} />
-        ))}
-      </div>
+      <Footer />
     </div>
   );
 }
