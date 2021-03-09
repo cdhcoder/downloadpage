@@ -21,7 +21,7 @@ const left_navi = [
     id: 2,
     name: "Release",
     date: "March 5, 2021",
-    data: ["TOS 21.rc", "내역2"]
+    data: ["TmaxOS_3.5.0", "ToOffice_3.5.0"]
   },
   {
     id: 5,
@@ -67,6 +67,11 @@ function Card({ name, date, data }){
             <td class="row-title">
               <strong>&#x2611; {trs}</strong>
             </td>
+            { name === "Release" ?
+              <td class="row-click">
+              <a class="n1" href={`/release_note/${trs}_release-note.pdf`} target="_blank">Click</a>
+            </td> : <td></td>
+            }
           </tr>
         ))}
       </table>
