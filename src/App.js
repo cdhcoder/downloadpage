@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import logo from './resources/os_logo.png'
 
 function  Header(){
   return (
       <div class="header">
-          <img src="http://192.168.1.211/os_logo.png" width="400" height="100"/>
+          <img src={logo} width="400" height="100"/>
           <h3>TmaxOS Download Page</h3>
       </div>
   );

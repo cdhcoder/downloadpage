@@ -17,10 +17,10 @@ app.use(cors());
 app.use('/api', api);
 const port = 3002;
 
-api.get('/usefulLinks', function(req,res){
+api.get('/download', function(req,res){
     var responseData = {};
 
-    var query = connection.query('select name from product', function(err, rows){
+    var query = connection.query('select * from download', function(err, rows){
         if (err) throw err;
         if (rows.length) {
             console.log(rows);
@@ -32,6 +32,103 @@ api.get('/usefulLinks', function(req,res){
         res.json(responseData);
     });
 });
+
+api.get('/manual', function(req,res){
+    var responseData = {};
+
+    var query = connection.query('select * from manual', function(err, rows){
+        if (err) throw err;
+        if (rows.length) {
+            console.log(rows);
+            responseData.result = 1;
+            responseData.data = rows;
+        } else {
+            responseData.result = "0";
+        }
+        res.json(responseData);
+    });
+});
+
+api.get('/notice', function(req,res){
+    var responseData = {};
+
+    var query = connection.query('select * from notice', function(err, rows){
+        if (err) throw err;
+        if (rows.length) {
+            console.log(rows);
+            responseData.result = 1;
+            responseData.data = rows;
+        } else {
+            responseData.result = "0";
+        }
+        res.json(responseData);
+    });
+});
+
+api.get('/product', function(req,res){
+    var responseData = {};
+
+    var query = connection.query('select * from product', function(err, rows){
+        if (err) throw err;
+        if (rows.length) {
+            console.log(rows);
+            responseData.result = 1;
+            responseData.data = rows;
+        } else {
+            responseData.result = "0";
+        }
+        res.json(responseData);
+    });
+});
+
+api.get('/releaseNotes', function(req,res){
+    var responseData = {};
+
+    var query = connection.query('select * from release_notes', function(err, rows){
+        if (err) throw err;
+        if (rows.length) {
+            console.log(rows);
+            responseData.result = 1;
+            responseData.data = rows;
+        } else {
+            responseData.result = "0";
+        }
+        res.json(responseData);
+    });
+});
+
+api.get('/usefulLinks', function(req,res){
+    var responseData = {};
+
+    var query = connection.query('select * from useful_links', function(err, rows){
+        if (err) throw err;
+        if (rows.length) {
+            console.log(rows);
+            responseData.result = 1;
+            responseData.data = rows;
+        } else {
+            responseData.result = "0";
+        }
+        res.json(responseData);
+    });
+});
+
+api.get('/utility', function(req,res){
+    var responseData = {};
+
+    var query = connection.query('select * from utility', function(err, rows){
+        if (err) throw err;
+        if (rows.length) {
+            console.log(rows);
+            responseData.result = 1;
+            responseData.data = rows;
+        } else {
+            responseData.result = "0";
+        }
+        res.json(responseData);
+    });
+});
+
 
 
 app.listen(port, ()=>console.log(`Listening on port ${port}`));
