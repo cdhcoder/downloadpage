@@ -92,6 +92,10 @@ th {
     background-color: #f2f2f2;
 }
 
+.new-line {
+    white-space: pre-line;
+}
+
 /* Notice/Release Note table row width */
 .row-title {
     width: 80%;

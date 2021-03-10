@@ -17,6 +17,22 @@ app.use(cors());
 app.use('/api', api);
 const port = 3002;
 
+api.get('/navigator', function(req,res){
+    var responseData = {};
+
+    var query = connection.query('select name from navigator', function(err, rows){
+        if (err) throw err;
+        if (rows.length) {
+            console.log(rows);
+            responseData.result = 1;
+            responseData.data = rows;
+        } else {
+            responseData.result = "0";
+        }
+        res.json(responseData);
+    });
+});
+
 api.get('/download', function(req,res){
     var responseData = {};
 

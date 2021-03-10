@@ -1,5 +1,12 @@
 import React from 'react';
 import './App.css';
+import TopNav from './TopNav';
+import Notice from './Notice';
+import ReleaseNote from './ReleaseNote';
+import Utility from './Utility';
+import UsefulLinks from './UsefulLinks';
+import Download from './Download';
+import Manual from './Manual';
 import logo from './resources/os_logo.png'
 
 function  Header(){
@@ -49,36 +56,36 @@ const right_navi = [
   },
 ];
 
-function Topnav({ name }){
+// function Topnav({ name }){
 
-  return (
-      <a href={`#${name}`}>{name}</a>
-  );
-}
+//   return (
+//       <a href={`#${name}`}>{name}</a>
+//   );
+// }
 
-function Card({ name, date, data }){
+// function Card({ name, date, data }){
  
-  return (
-    <div className="card">
-      <h2 id={name}><font color="#0066ff">&#9483; </font>{name}</h2>
-      <h5>{date}</h5>
-      <table>
-        {data.map(trs => (
-          <tr>
-            <td class="row-title">
-              <strong>&#x2611; {trs}</strong>
-            </td>
-            { name === "Release" ?
-              <td class="row-click">
-              <a class="n1" href={`/release_note/${trs}_release-note.pdf`} target="_blank">Click</a>
-            </td> : <td></td>
-            }
-          </tr>
-        ))}
-      </table>
-    </div>
-  );
-}
+//   return (
+//     <div className="card">
+//       <h2 id={name}><font color="#0066ff">&#9483; </font>{name}</h2>
+//       <h5>{date}</h5>
+//       <table>
+//         {data.map(trs => (
+//           <tr>
+//             <td class="row-title">
+//               <strong>&#x2611; {trs}</strong>
+//             </td>
+//             { name === "Release" ?
+//               <td class="row-click">
+//               <a class="n1" href={`/release_note/${trs}_release-note.pdf`} target="_blank">Click</a>
+//             </td> : <td></td>
+//             }
+//           </tr>
+//         ))}
+//       </table>
+//     </div>
+//   );
+// }
 
 function Footer(){
   return (
@@ -97,21 +104,28 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="topnav">
+      {/* <div className="topnav">
         {navigator.map(nav => (
           <Topnav name={nav.name} />
         ))}
-      </div>
+      </div> */}
+      <TopNav />
       <div className="row">
         <div className="leftcolumn">
-          {left_navi.map(nav => (
+          {/* {left_navi.map(nav => (
             <Card id={nav.id} name={nav.name} date={nav.date} data={nav.data} />
-          ))}
+          ))} */}
+          <Notice />
+          <ReleaseNote />
+          <Utility />
+          <UsefulLinks />
         </div>
         <div className="rightcolumn">
-          {right_navi.map(nav => (
+          {/* {right_navi.map(nav => (
             <Card id={nav.id} name={nav.name} date={nav.date} data={nav.data} />
-          ))}
+          ))} */}
+          <Download />
+          <Manual />
         </div>
       </div>
       <Footer />
