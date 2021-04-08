@@ -1,0 +1,250 @@
+@charset "utf-8";
+/* Managed by Hye Li Kwon (OQA1 Team) */
+/* Styles for TmaxOS Download Page */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 10px;
+    background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+    padding: 20px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.header h1 {
+    font-size: 50px;
+}
+
+h2 {
+    text-shadow: 3px 2px #e6e6e6;
+    letter-spacing: 2px;
+}
+
+img {
+    max-width: auto;
+    height: 100%;
+}
+
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #131353;
+}
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #0055ff;
+    color: #f2f2f2;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+    float: left;
+    width: 25%;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 75%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Table style */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+.new-line {
+    white-space: pre-line;
+}
+
+/* Notice/Release Note table row width */
+.row-title {
+    width: 80%;
+}
+.row-click {
+    width: 20%
+}
+
+/* Download table row witdh */
+.row-product {
+    width: 30%;
+}
+.row-download {
+    width: 10%;
+}
+.row-guide {
+    width: 25%;
+}
+
+/* Manual table row width */
+.row-man_product {
+    width: 30%;
+}
+.row-man_file {
+    width: 60%;
+}
+.row-man_button {
+    width: 5%;
+}
+
+
+/* Add a card effect for articles */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* 32bit Download link */
+a.d1:link, a.d1:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a.d1:hover, a.d1:active {
+    background-color: red;
+}
+
+/* 64bit Download link */
+a.d2:link, a.d2:visited {
+    background-color: #0066ff;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a.d2:hover, a.d2:active {
+    background-color: blue;
+}
+
+/* Read, Downalod URL link */
+a.url:link, a.url:visited {
+    color: #e60000;
+    text-decoration: underline;
+}
+a.url:hover, a.url:active  {
+    color: #ffffff;
+    background-color: #ff3333;
+}
+
+/* Useful link URL link */
+a.url1:link, a.url1:visited {
+    color: #000000;
+    text-decoration: none;
+}
+a.url1:hover, a.url1:active  {
+    color: #0066ff;
+    text-decoration: underline;
+}
+
+/* Manual Read link */
+a.m1:link, a.m1:visited {
+    background-color: #33bbff;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a.m1:hover, a.m1:active {
+    background-color: #0099e6;
+}
+
+/* Manual Download link */
+a.m2:link, a.m2:visited {
+    background-color: #0088cc;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a.m2:hover, a.m2:active {
+    background-color: #005580;
+}
+
+/* Notice, Release link */
+a.n1:link, a.n1:visited {
+    background-color: #ff8533;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a.n1:hover, a.n1:active {
+    background-color: #e65c00;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
